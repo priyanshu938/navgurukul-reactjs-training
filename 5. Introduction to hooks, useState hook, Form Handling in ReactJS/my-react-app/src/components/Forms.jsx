@@ -7,6 +7,8 @@ const Forms = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);
+    setEmail("");
+    setPassword("");
   };
   return (
     <form
@@ -26,6 +28,7 @@ const Forms = () => {
         type="email"
         name=""
         id="email"
+        value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <label htmlFor="password">Password:</label>
@@ -33,6 +36,7 @@ const Forms = () => {
         type="password"
         name=""
         id="password"
+        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <button type="submit">Submit</button>
