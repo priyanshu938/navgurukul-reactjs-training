@@ -19,12 +19,14 @@ const LoginForm = () => {
       return;
     }
     setShowPasswordErrorMessage(false);
+    setEmail("");
+    setPassword("");
     console.log(email, password);
   };
   return (
     <>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h1>🔏Login🔏</h1>
+        <h1 className={styles.heading}>🔏Login🔏</h1>
         <div className={styles.inputContainer}>
           <EmailIcon className={styles.icon} />
           <input
@@ -39,7 +41,7 @@ const LoginForm = () => {
           <div className={styles.inputContainer}>
             <LockIcon className={styles.icon} />
             <input
-              type={showPassword ? "password" : "text"}
+              type={!showPassword ? "password" : "text"}
               placeholder="Enter password..."
               className={styles.passwordInput}
               value={password}
